@@ -1,0 +1,32 @@
+{
+  "model": {
+    "max_length": 20,
+    "dimension": 64,
+    "layers": 2,
+    "heads": 2,
+    "feedforward": 256,
+    "dropout": 0.2
+  },
+  "training": {
+    "seed": 0,
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "negative_samples": 128,
+    "max_epochs": 40,
+    "min_epochs": 10,
+    "patience": 8
+  },
+  "domains": {
+    "auto": {"background": "expanded"},
+    "music": {"background": "expanded"},
+    "kindle": {"background": "expanded"},
+    "health": {"background": "expanded"},
+    "sports": {"background": "expanded"},
+    "books": {
+      "background": "original",
+      "training": {"batch_size": 128, "max_epochs": 200, "min_epochs": 60, "patience": 20}
+    }
+  },
+  "candidate_count": 10,
+  "chunk_size": 500000
+}
